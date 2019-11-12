@@ -1,0 +1,57 @@
+﻿<div class="modal">
+  <div class="modal-body">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="first_name">First Name<br></label>
+        <input type="text" id="first_name" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }"/>
+        <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+          <div *ngIf="f.first_name.errors.required"><p class="error">First Name is required</p></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="last_name">Last Name<br></label>
+        <input type="text" id="last_name" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }"/>
+        <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+          <div *ngIf="f.last_name.errors.required"><p class="error">Last Name is required</p></div>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="email">Email<br></label>
+        <input type="email" id="email" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+        <div *ngIf="submitted && f.email.errors && f.email.errors.required" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required"><p class="error">Email is required</p></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for access:<br></label>
+        <textarea [rows]="5" id="reason" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && f.reason.errors}"
+                  rows="10"></textarea>
+        <div *ngIf="submitted && f.reason.errors" class="invalid-feedback">
+          <div *ngIf="f.reason.errors.required"><p class="error">Reason is required</p></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading"
+             src="/src/assets/loading.gif"/>
+      </div>
+    </form>
+    <nav>
+      <button (click)="switchModal('login-modal')">Login</button>
+      <button (click)="closeModal()">Close</button>
+    </nav>
+  </div>
+</div>
+<div class="modal-background"></div>
+

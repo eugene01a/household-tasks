@@ -1,0 +1,21 @@
+<div class="modal">
+  <div class="modal-body">
+    <h2>Forgot Password</h2>
+    <form [formGroup]="forgotPWForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email<br></label>
+        <input type="email" formControlName="email" class="form-control" id="email"
+               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required"><p class="error">Email is required</p></div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default" [disabled]="!forgotPWForm.valid">Submit</button>
+    </form>
+    <nav>
+      <button (click)="switchModal('login-modal')">Login</button>
+      <button (click)="closeModal()">Close</button>
+    </nav>
+  </div>
+</div>
+<div class="modal-background"></div>
