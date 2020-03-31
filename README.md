@@ -2,6 +2,9 @@
 
 A portal to access web applications. User access is managed by my [token auth server](https://github.com/eugene01a/auth-server). Written in Angular.
 
+
+Details below to follow: 
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -54,7 +57,7 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+This code is built to be hosted locally locally, no additional deployment steps are necessary.
 
 ## Built With
 
