@@ -1,0 +1,34 @@
+﻿<!-- navigation bar appears if logged in -->
+<mat-toolbar color="primary" class="mat-elevation-z10" *ngIf="isLoggedIn">
+  <h1>Household Portal</h1>
+  <span class="fill-remaining-space"></span>
+  <div *ngIf="noModalUrls.includes(router.url)==false">
+    <button mat-button routerLink="/profile">Account</button>
+    <button mat-button routerLink="/admin" *ngIf="isAdmin">Manage</button>
+    <button mat-button (click)="openModal('logout-modal')">Sign Out</button>
+  </div>
+</mat-toolbar>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': isLoggedIn }">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
+
+
+<modal id="login-modal">
+  <login></login>
+</modal>
+
+<modal id="logout-modal">
+  <logout></logout>
+</modal>
+
+<modal id="forgot-pw-modal">
+  <forgot-pw></forgot-pw>
+</modal>
+
+<modal id="register-modal">
+  <register></register>
+</modal>
+

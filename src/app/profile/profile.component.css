@@ -1,0 +1,43 @@
+h1 {
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2.25rem;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: #202124;
+  margin: 0 0 8px 0;
+  padding: 0;
+  text-align: center;
+}
+
+caption {
+  letter-spacing: .00625em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  hyphens: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: #5f6368;
+  text-align: center;
+}
+
+body {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #dadce0;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  border: 1px solid #009900;
+}
