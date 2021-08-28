@@ -64,14 +64,13 @@ export class LoginComponent implements OnInit {
                 data => {
                     this.appComponent.isLoggedIn = true;
                     console.log('this.appComponent.isLoggedIn= ' + this.appComponent.isLoggedIn);
+                    if (data.role === 'Admin') {
+                        this.appComponent.isAdmin = true;
+                        console.log('User logged in as admin!');
+                    }
                     this.loading = false;
                     this.response = data;
-                    if (this.response.role === 'Admin') {
-                        this.router.navigate(['/admin']);
-                    } else {
-                        this.router.navigate(['/']);
-                    }
-
+                    this.router.navigate(['/dashboard']);
                 },
                 error => {
                     this.alertService.error(error);

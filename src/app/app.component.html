@@ -3,8 +3,9 @@
   <h1>Household Portal</h1>
   <span class="fill-remaining-space"></span>
   <div *ngIf="noModalUrls.includes(router.url)==false">
-    <button mat-button routerLink="/profile">Account</button>
-    <button mat-button routerLink="/admin" *ngIf="isAdmin">Manage</button>
+    <button *ngIf="!isCurrentRoute('/dashboard')" mat-button routerLink="/dashboard">Dashboard</button>
+    <button *ngIf="!isCurrentRoute('/profile')" mat-button routerLink="/profile">Account</button>
+    <button *ngIf="!isCurrentRoute('/admin') && isAdmin" mat-button routerLink="/admin">Manage</button>
     <button mat-button (click)="openModal('logout-modal')">Sign Out</button>
   </div>
 </mat-toolbar>

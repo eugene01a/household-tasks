@@ -7,7 +7,7 @@ import {AuthService, ModalService} from './_services';
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
-  noModalUrls = ['/login', '/register', '/forgot-pw']
+  noModalUrls = ['/login', '/register', '/forgot-pw'];
   isAdmin: boolean;
   isLoggedIn: boolean;
 
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     private modalService: ModalService,
   ) {
     this.authService.isAuthenticated().subscribe(data => this.isLoggedIn = data);
-    console.log('isLoggedIn= ' + this.isLoggedIn)
+    console.log('isLoggedIn= ' + this.isLoggedIn);
 
 
   }
@@ -27,5 +27,9 @@ export class AppComponent implements OnInit {
 
   openModal(id: string) {
     this.modalService.open(id);
+  }
+
+  isCurrentRoute(route: string) {
+    return this.router.url === route;
   }
 }

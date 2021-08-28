@@ -8,7 +8,8 @@ import {Observable, of, throwError} from 'rxjs';
 @Injectable()
 export class AuthService {
 
-    constructor(private http: HttpClient,
+    constructor(
+        private http: HttpClient,
     ) {
     }
 
@@ -17,6 +18,7 @@ export class AuthService {
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.auth_token) {
+                    console.log('login successful, response: ', user);
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
