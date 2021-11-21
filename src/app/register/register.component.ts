@@ -25,13 +25,13 @@ export class RegisterComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(Date.now() + "\t ngOnInit() was run");
+        console.log(Date.now() + '\t ngOnInit() was run');
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
             reason: ['', [Validators.required, Validators.minLength(6)]]
-        })
+        });
     }
 
     onSubmit() {
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
 
         // stop here if form is invalid
         if (this.registerForm.invalid) {
-            console.log(Date.now() + "\t Form is invalid!");
+            console.log(Date.now() + '\t Form is invalid!');
             return;
         }
         this.loading = true;
@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
                 error => {
                     this.alertService.error(error);
                 });
-        console.log(Date.now() + "\tAuth service called, setting loading to false")
+        console.log(Date.now() + '\tAuth service called, setting loading to false');
         this.loading = false;
         console.log(this);
     }

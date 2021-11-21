@@ -5,18 +5,20 @@ import {UserInfo} from '../_models';
 
 
 @Component({
-  selector: 'profile',
-  templateUrl: 'profile.component.html'
+    selector: 'profile',
+    templateUrl: 'profile.component.html',
+    styleUrls: ['profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  userInfo: UserInfo;
+    userInfo: UserInfo;
 
-  constructor(private authService: AuthService) {
-  }
+    constructor(private authService: AuthService) {
+    }
 
-  ngOnInit() {
-    this.authService.profile().subscribe(response => {this.userInfo = response
+    ngOnInit() {
+        this.authService.profile().pipe(first()).subscribe(data => {
+            this.userInfo = data;
         });
-  }
+    }
 
 }

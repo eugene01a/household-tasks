@@ -1,6 +1,6 @@
 ﻿<!-- navigation bar appears if logged in -->
-<mat-toolbar color="primary" class="mat-elevation-z10" *ngIf="isLoggedIn">
-  <h1>Household Portal</h1>
+<mat-toolbar *ngIf="isLoggedIn">
+  <h3>Household Portal</h3>
   <span class="fill-remaining-space"></span>
   <div *ngIf="noModalUrls.includes(router.url)==false">
     <button *ngIf="!isCurrentRoute('/dashboard')" mat-button routerLink="/dashboard">Dashboard</button>
@@ -16,20 +16,6 @@
   <router-outlet></router-outlet>
 </div>
 
-
-<modal id="login-modal">
-  <login></login>
-</modal>
-
-<modal id="logout-modal">
-  <logout></logout>
-</modal>
-
-<modal id="forgot-pw-modal">
-  <forgot-pw></forgot-pw>
-</modal>
-
-<modal id="register-modal">
-  <register></register>
-</modal>
-
+<jw-modal id="logout-modal">
+    <logout></logout>
+</jw-modal>

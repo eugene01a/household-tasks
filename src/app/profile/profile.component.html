@@ -1,17 +1,22 @@
-﻿<head><style>
-  h1.title {color: black; text-align: center;}
-  body.profile-info {border: 1px solid;}
-  tr {width: 100%}
-  th {text-align: left;}
-  td {text-align: right;}
-
-</style></head>
-
-<h1 class="title">My Account Info</h1>
-<table>
+﻿<table class="mat-elevation-z8">
+<tr>
+  <th>First Name</th>
+  <td>{{userInfo.first_name}}</td>
+</tr>
   <tr>
-    <th>Email: </th>
-    <td>{{userInfo.email}}</td>
-  </tr>
+  <th>Last Name</th>
+  <td>{{userInfo.last_name}}</td>
+</tr>
+   <tr>
+  <th>Email</th>
+  <td>{{userInfo.email}}</td>
+</tr>
+   <tr>
+  <th>Role</th>
+  <td>{{userInfo.role}}</td>
+</tr>
+   <tr>
+  <th>Registration Date</th>
+  <td>{{userInfo.registration_date}}</td>
+</tr>
 </table>
-<p>This is a paragraph.</p>
