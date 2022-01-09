@@ -1,8 +1,9 @@
 ﻿import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
-import {AlertService, AuthService, ModalService} from '../_services';
+import {AlertService, AuthService} from '../_services';
 import {AppComponent} from '../app.component';
+import {ModalService} from "../_modal";
 
 @Component({
   selector: 'logout',

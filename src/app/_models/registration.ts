@@ -1,15 +1,17 @@
 ﻿export class Registration {
-  registration_id: number;
+  position: number;
+  registrationId: number;
   email: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   requestedOn: string;
   reason: string;
 
-  constructor(registration_id: number, email: string, first_name: string, last_name: string, reason: string, requestedOn: string) {
-    this.registration_id = registration_id;
-    this.first_name = first_name;
-    this.last_name = last_name;
+  constructor(position: number, registrationId: number, email: string, firstName: string, lastName: string, reason: string, requestedOn: string) {
+    this.position = position;
+    this.registrationId = registrationId;
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.reason = reason;
     this.requestedOn = requestedOn;
 
