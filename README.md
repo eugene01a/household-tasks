@@ -2,7 +2,7 @@
 
 A portal to access web applications. User access is managed by my [token auth server](https://github.com/eugene01a/auth-server). Written in Angular.
 
-## TODO: Getting Started
+##Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
@@ -32,9 +32,9 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Running
 
-Explain how to run the automated tests for this system
+ng serve
 
 ### Break down into end to end tests
 
